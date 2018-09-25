@@ -18,7 +18,7 @@ Deploy a contract to Ropsten Testnet and make your contract source code public.
 
 After installing MetaMask,  you can find MetaMask icon(a fox) on top right.  Click it and try the new MetaMask.
 
-<img src="/Users/anxin/Desktop/tutorial/maskopen.jpg" width="400" />
+<img src="maskopen.jpg" width="400" />
 
 
 
@@ -27,20 +27,20 @@ After installing MetaMask,  you can find MetaMask icon(a fox) on top right.  Cli
 
 **1**.After click continue, it's required to create an account for the first time. 
 
-<img src="/Users/anxin/Desktop/tutorial/newAccount.jpg" width="400" />
+<img src="newAccount.jpg" width="400" />
 
 **2**.After accepting several statements, you can get your "Secret Backup Phrase". Save it to a convinient place.  Soon we will use it to finish the creation.
 
 > "Secret Backup Phrase" can be used to recover your account. 
 
-<img src="/Users/anxin/Desktop/tutorial/secret phrase.jpg">
+<img src="secret phrase.jpg">
 
 ### Connect to Ropsten Test Network
 
 Default, we are on "Main Ethereum Network". Switch to "Ropsten Test Network".
 
 
-<img src="/Users/anxin/Desktop/tutorial/masknetwork.jpg" width="500" />
+<img src="masknetwork.jpg" width="500" />
 
 ### Get test ether 
 
@@ -50,7 +50,7 @@ We need ether to send transactions.  Go to [Ropsten Faucet](https://faucet.ropst
 > Every day, you can get one ether for your account.  
 > One public ip is allowed to do one time in a day.
 
-<img src="/Users/anxin/Desktop/tutorial/getether.jpg" width="500" />
+<img src="getether.jpg" width="500" />
 
 ### Open Remix && Connect to Ropsten
 
@@ -60,7 +60,7 @@ We need ether to send transactions.  Go to [Ropsten Faucet](https://faucet.ropst
 
 **2.**Click "run" on the right top and change Enviroment to "Injected Web3". We use the configuration of MetaMask, so we connect to Ropsten here.
 
-<img src="/Users/anxin/Desktop/tutorial/connectmetamask.jpg" width="500" />
+<img src="connectmetamask.jpg" width="500" />
 
 
 
@@ -177,8 +177,8 @@ contract demoToken {
 **2.**Click compile. It shows the information of compiler. By default, current version is "0.4.25+commit.59dbf8f1.Emscripten.clang" and you don't need change it. In case it's different, you can choose it at the very beginning of dropdown item(show in the second picture below)
 
 **3.**Select enable optimation and start compile
-<img src="/Users/anxin/Desktop/tutorial/compile.jpg" width="500" />
-<img src="/Users/anxin/Desktop/tutorial/version.jpg", width="400">
+<img src="compile.jpg" width="500" />
+<img src="version.jpg", width="400">
  
 
 
@@ -199,18 +199,18 @@ Possible arguments: 10000, "DemoToken","DMT", 10
 **1.**Input arguments and deploy.
 
 
-<img src="/Users/anxin/Desktop/tutorial/deploy.jpg" width="500" />
+<img src="deploy.jpg" width="500" />
 
 
 **2.**After clicking deploy, you can see your receipt on the left. Confirm it and waiting for seconds, you contract will be deployed to 
 
-<img src="/Users/anxin/Desktop/tutorial/receipt.jpg" width="400" />
+<img src="receipt.jpg" width="400" />
 
 
 **3.**After a short waiting, you can check your deployed contract. Copy the contract address. We will use it to check our contract status in "Etherscan". **Do not close remix unitl tutorial end !!**
 
 
-<img src="/Users/anxin/Desktop/tutorial/copy address.jpg" width="400" />
+<img src="copy address.jpg" width="400" />
 
 
 ### Make your contract public in Etherscan
@@ -222,24 +222,24 @@ Possible arguments: 10000, "DemoToken","DMT", 10
 
 > In Etherscan, we can check every transaction and see the source code of every deployed contract. To make your contract reliable for others,  it's best to public your contract.
 
-<img src="/Users/anxin/Desktop/tutorial/ethersan.jpg" width="500" />
+<img src="ethersan.jpg" width="500" />
 
 
 
 
 **2.**At this moment, you can only see your contract bytecode or opcode. Then click "Verify and Publish" to offer your source code.
 
-<img src="/Users/anxin/Desktop/tutorial/eccode.jpg" width="300" />
+<img src="eccode.jpg" width="300" />
 
 
 **3.**Input your contract name , choose compiler version,  soruce code. Then you can verify and publish your source code.
 
 
-<img src="/Users/anxin/Desktop/tutorial/publish.jpg" width="500" />
+<img src="publish.jpg" width="500" />
 
 
 
 **4.**Now your source code is viewable for everyone.
 
 
-<img src="/Users/anxin/Desktop/tutorial/sourceCode.jpg" width="500" />
+<img src="sourceCode.jpg" width="500" />
