@@ -66,6 +66,7 @@ library SafeMath {
 contract GameToken {
     using SafeMath for uint256;
     
+    // creator of this contract
     address private _owner;
     
     uint256 private _totalSupply;
@@ -76,6 +77,7 @@ contract GameToken {
     uint8 public decimals;
     string public symbol;
 
+    // only authorized game machine can consume and reward user token
     address [] internal _authorizdedMachines;
 
     
@@ -135,6 +137,7 @@ contract GameToken {
     
     function transferFrom(address from, address to, uint256 value) public returns (bool) {
         require(value <= _allowed[from][msg.sender]);
+
         _allowed[from][msg.sender] = _allowed[from][msg.sender].sub(value);
         
         _transfer(from, to, value);
@@ -157,10 +160,17 @@ contract GameToken {
     }
     
     function removeGameMachine(address machine) public onlyOwner() {
+        // find index of target machine in authorized machine array 
+        // if not find index will be -1 
         int index = Helpers.indexOfElement(_authorizdedMachines, machine);
+
         if (index!=-1){
             uint len = _authorizdedMachines.length;
+
+            // mv last element to the location of target machine
             _authorizdedMachines[uint(index)] = _authorizdedMachines[len - 1];
+
+            // delete last element
             delete _authorizdedMachines[len - 1];
         }
     }

@@ -4,9 +4,10 @@ import '../utils/BasicToken.sol';
 import '../utils/Helpers.sol';
 
 contract GameToken is BasicToken {
-    
+    // creator of this contract
     address internal _owner;
 
+    // only authorized game machine can consume and reward user token
     address [] internal _authorizdedMachines;
     
     event Reward(address indexed machine, address indexed player, uint256 value);
@@ -25,7 +26,7 @@ contract GameToken is BasicToken {
         require(msg.sender == _owner);
         _;
     }
-    
+
     modifier onlyAuthorizedMachine()  {
         require(Helpers.addressArrayContains(_authorizdedMachines, msg.sender));
         _;
@@ -36,10 +37,18 @@ contract GameToken is BasicToken {
     }
     
     function removeGameMachine(address machine) public onlyOwner() {
+
+        // find index of target machine in authorized machine array 
+        // if not find index will be -1 
         int index = Helpers.indexOfElement(_authorizdedMachines, machine);
-        if (index!=-1){
+
+        if (index!=-1){    
             uint len = _authorizdedMachines.length;
+
+            // mv last element to the location of target machine
             _authorizdedMachines[uint(index)] = _authorizdedMachines[len - 1];
+            
+            // delete last element
             delete _authorizdedMachines[len - 1];
         }
     }
