@@ -149,18 +149,36 @@ The latter version is [here](http://private.secdevgame.site), which is built on 
 In addition, important notes of implementing such a demo in general are summarized.
 
 ### 2. Demo Show
-(这部分我等会优化下前端再补充图片)
 
 
-1. Create your account and log in.
+1.For the first time you don't have an account, so create your account and sign in. Your generated account will be stored in browser cookie. If you want to sign in again with the same account, you may need to enable cookie in your browser.
 
-2. Get some ether for test.
+<center> <img src="assets/signin.png" width=300> </center>
+	
+<center> <img src="assets/welcome.png" width=300> </center>
 
-3. Now you are ready to play the game machine! Input your bet amount and run the slotmachine. After 5 rounds, you will get one token for reward.
+2.At the top of web page, you can see our navigation bar, including *Game Machine*, *Wallet*, *Faucet*.
 
-4. Consume 2 tokens, you can get into a *Double* state, where after 4 rounds, your reward will double.
+<center> <img src="assets/nav.png" width=500> </center> 
 
-5. (This part is only shown in the latter version) Look into the wallet, you can transfer your token between the private chain and the public chain. After input the amount of token to transfer, click the *exchange* button and input your password, you will send a transaction signed by your account to the server that has been already set up. The server will send this signed transaction to the public or the private chain.
+3.Go to our faucet and get 0.01 ether for test.
+
+<center> <img src="assets/faucet.png" width=500> </center>
+
+4.Now you can start to play game machine! Input your wager amount and run the slotmachine. After 4 rounds, you will get one token for reward.
+
+<center> <img src="assets/slotmachine.png" width=500> </center>
+
+4.Consume 2 tokens, you can get into a *Double* state, where after 4 rounds, your reward will double.
+
+<center> <img src="assets/double.png" width=500> </center>
+
+5.(This part is only shown in the latter version) Look into the wallet, you can transfer your token between the private chain and the public chain. After input the amount of token to transfer, click the *exchange* button , you will send a transaction signed by your account to our server which transfer the transaction to chain . After waiting for seconds, you can see your token transferred to the other chain.
+
+
+<center> <img src="assets/wallet.png" width=400> </center>
+
+
 
 
 ### 3. Implementation in general.
@@ -173,9 +191,7 @@ The following image illustrates the overview architecture. In fact, the "bridge"
 <center> <img src="assets/arc.png" width=700> </center>
 
 
-1. Create your account and login in.
-
-Please use [eth-lightwallet](https://github.com/ConsenSys/eth-lightwallet) to create your wallet. Your wallet is actually created and stored in your browser. Later you can use this wallet to create and sign a transaction.
+1. Here I use this library [eth-lightwallet](https://github.com/ConsenSys/eth-lightwallet) to create your wallet. Your wallet is actually created and stored in your browser. Later you can use this wallet to create and sign a transaction.
 
 2. Get some ether for test.
 
@@ -191,7 +207,7 @@ This part is written fully in  `js`.
 
 5. Exchange tokens between the private chain and the public chain via the wallet.
 
-* When you click *exchange* button, you are actually using your wallet to create a transaction and your input password to sign the transaction. 
+* When you click *exchange* button, you are actually using your wallet to create and sign a transaction.
 * Then the transaction, wrapped in the http request, is sent to the server. Upon receving the transaction, the server sends it to the public chain or the private chain for you according to your decision. 
 * Suppose the transaction is sent to the public chain and the public chain excecutes it, reduces you token amount in the public chain, and emits an event(you can see there are event defined in the contract). 
 * Our bridge, as a js program that is listening on such event will catch this event, and send another transaction to the private chain to increase your token amount in the private chain. 
