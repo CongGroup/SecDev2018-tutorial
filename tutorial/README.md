@@ -8,52 +8,50 @@ This tutorial includes three part: **Deploy and Make Contract Public**, **From C
 
 ### 1. Introduction
 
-In this part, [*Kovan Etherscan*](https://kovan.etherscan.io/) (One of ethereum testnet) is used for contract deployment. Before the actual deployment, it is required to install [chrome](https://www.google.com/chrome/) and [MetaMask](https://metamask.io/) extension. With *MetaMask* (a pretty GUI), you don't have to run your own node. See details below.
+In this part, [*Kovan Etherscan*](https://kovan.etherscan.io/) (one of the ethereum testnets) is used for contract deployment. Before the actual deployment, it is required to install [chrome](https://www.google.com/chrome/) and [MetaMask](https://metamask.io/) extension. With *MetaMask* (a pretty GUI), you don't have to run your own node. See details below.
 
-### 2.Open MetaMask
+### 2. Open MetaMask
 
-After installing MetaMask, you can find MetaMask icon (a fox) on top right. Click it. For consideration of compatibility issues, please try the new version of *MetaMask*.
+After installing MetaMask, you can find MetaMask icon (a fox) on the top right. Click it. 
+> Please try to use the latest version of **MetaMask**.
 
 
 <center><img style="text-align:center" src="assets/maskopen.jpg" width="250" /></center>
 
 
-
-
 ### 3. Create your account 
 
-   1. Click continue, please follow the instructions to create an account. 
+   1. Please follow the instruction to create a wallet account.
 
 <center><img src="assets/newAccount.jpg" width="250" /></center>
 
-   2. After a few simple steps, you will see the "Secret Backup Phrase". Save it to a 
-convenient place.  Soon we will use it to finish the creation.
+   2. After a few simple steps, you will see the "Secret Backup Phrase". Copy and save it to a 
+convenient place. Soon we will use it again.
 
 > "Secret Backup Phrase" can be used to recover your account. 
 
 <center><img src="assets/secret phrase.jpg" width="300"></center>
 
-### 4. Connect to Kovan Test Network
+### 4. Connect to "Kovan Test Network"
 
-By default, "Main Ethereum Network" is used for contract deployment. Switch to "Kovan Test Network".
+By default, "Main Ethereum Network" is used for contract deployment. In this tutorial, please switch to "Kovan Test Network".
 
 
 <center><img src="assets/masknetwork.jpg" width="600" /></center>
 
 ### 5. Get test ether 
 
-For convinience, you can visit this [Demo Faucet](http://private.secdevgame.site/#/faucet) to get 0.01 ether for test. Or you can visit [Kovan faucet](https://gitter.im/kovan-testnet/faucet), send out your address and wait for administrator to give you 3 ether.
+For convenience, you can visit this [Demo Faucet](http://private.secdevgame.site/#/faucet) to get 0.01 ether for the test. Or you can visit [Kovan faucet](https://gitter.im/kovan-testnet/faucet), send out your address, and wait for an administrator to give you 3 ethers.
 
 <center><img src="assets/getEther.png" width="700" /></center>
 
 
+### 6. Open Remix & Connect to Kovan
 
-### 6. Open Remix && Connect to Kovan
+  1. Click [here](https://remix.ethereum.org) to open Remix. 
+> Remix is an online IDE for Solidity (An official programming language for smart contract). It is quite easy to use Remix for contract compilation and deployment. 
 
-  1. Click [here](https://remix.ethereum.org) to open remix. 
-> Remix is an online IDE for Solidity(A official programming language for smart contract). It is quite easy to use Remix for contract compilation and deployment . 
-
-  2. Click *Run* on the right top and alter the Enviroment to "Injected Web3". As we are using *MetaMask*, we connect to Kovan here.
+  2. Click `Run` on the right top and alter the Environment to `Injected Web3`. As we are using **MetaMask**, we connect to Kovan here.
 
 <center><img src="assets/connectmetamask.jpg" width="400" /></center>
 
@@ -61,15 +59,15 @@ For convinience, you can visit this [Demo Faucet](http://private.secdevgame.site
 
 ### 7. Compile contract 
 
-  1. For the first time, remix will generate a simple "ballot.sol" contract for us. Replace the content with our token contract. And then paste our demo code to the editor. You can find the code [here].(https://github.com/CongGroup/SecDev2018-tutorial/blob/master/contract/DemoToken.sol)
+  1. For the first time, Remix will generate a simple "ballot.sol" contract for us. Replace the content with our customized token contract. And then paste our demo code to the editor. You can find the code [here](https://github.com/CongGroup/SecDev2018-tutorial/blob/master/contract/DemoToken.sol).
 
 
-  2. Click compile. It displays all the information of the compiler. By default, the current version is "0.4.25+commit.59dbf8f1.Emscripten.clang" and you don't have to change it. In case it's different, you can choose it at the very beginning of dropdown item (show in the second picture below).
+  2. Click `Compile`. It displays all the information of the compiler. By default, the current version is `0.4.25+commit.59dbf8f1.Emscripten.clang` and you don't have to change it. In case it's different, you can choose it at the very beginning of drop-down item (show in the second picture below).
 
-  3. Select "Enable Optimation" and click "Start to compile"
+  3. Select `Enable Optimation` and click `Start to compile`
 <center><img src="assets/compile.jpg" width="500" /> </center>
 
-  Note: Check the following image if your have trouble following step 2 in this session.
+  > Note: Check the following image if your have trouble following step 2 in this session.
 <center> <img src="assets/version.jpg", width="400"> </center>
  
 
@@ -79,15 +77,15 @@ For convinience, you can visit this [Demo Faucet](http://private.secdevgame.site
 
 After compilation, it's time to deploy the contract. The contract constructor has four arguments:
 
-* Amount of token to supply (uint)
-* Name of token		            (string)
-* Symbol of token	            (string)
-* Token Decimal                   (uint). As there is no **float** type now, your may need define decimal.
+* Amount of the token to supply (uint)
+* Name of the token (string)
+* Symbol of the token (string)
+* Token Decimal (uint). As there is no **float** type now, you may need to define decimal.
 
 
-Possible arguments: 10000, "DemoToken","DMT", 10
+Possible arguments: **10000, "DemoToken","DMT", 10**.
 
-  1. Input the example arguments and click "Deploy".
+  1. Input the example arguments and click `Deploy`.
 
 
 <center><img src="assets/deploy.jpg" width="500" /></center>
@@ -98,7 +96,7 @@ Possible arguments: 10000, "DemoToken","DMT", 10
 <center><img src="assets/receipt.jpg" width="300" /></center>
 
 
-  3. After a short while, you can check your deployed contract. Please copy the contract address. Later it can be used to check your contract status in "Etherscan". **Do not close remix until this part end !!**
+  3. After a short while, you can check your deployed contract. Please copy the contract address. Later it can be used to check your contract status in **Etherscan**. **Do not close remix until this part end !!**
 
 
 <center><img src="assets/copyAddress.jpg" width="500" /></center>
@@ -118,19 +116,19 @@ Possible arguments: 10000, "DemoToken","DMT", 10
 
 
 
-  2. At this moment, you can only see your contract bytecode or opcode. Click "Verify and Publish" to publish your source code.
+  2. At this moment, you can only see your contract bytecode or opcode. Click `Verify and Publish` to publish your source code.
 
 <center><img src="assets/eccode.jpg" width="800" /></center>
 
 
-  3. Input your contract name, choose the compiler version and the soruce code. Then you can verify and publish your source code.
+  3. Input your contract name, choose the compiler version and the source code. Then you can verify and publish your source code.
 
 
 <center><img src="assets/publish.jpg" width="800" /></center>
 
 
 
-  4. Now your source code is viewable for everyone.
+  4. Now your source code is available for public review.
 
 
 <center><img src="assets/sourceCode.jpg" width="800" /></center>
@@ -140,77 +138,73 @@ Possible arguments: 10000, "DemoToken","DMT", 10
 
 ### 1. Introduction
 
-In this part, detailed explanation of the demo is provided. There are altogether two versions of demo. One is built on the public chain while the other is built on the private chain and the public chain. The functions of the former version is included in the latter version. After going through the former version, you can have a better understanding upon why we use the private chain here. 
+In this part, the detailed explanation of the demo is provided. There are altogether two versions of the demo. One is built on the public chain only while the other is built on both the private chain and the public chain. The functions of the former version are included in the latter version. After going through the former version, you can have a better understanding of why we use the private chain here. 
 
-The former version is [here](http://public.secdevgame.site), which is built on the public chain
+The former version is [here](http://public.secdevgame.site), which is built on the public chain only.
 
 The latter version is [here](http://private.secdevgame.site), which is built on the private chain and the public chain.
-
-In addition, important notes of implementing such a demo in general are summarized.
 
 ### 2. Demo show
 
 
-  1. For the first time you don't have an account, so create your account and sign in. Your generated account will be stored in browser cookie. If you want to sign in again with the same account, you may need to enable cookie in your browser.
+  1. If you don't have an account, create one and sign in. Your generated account will be stored in the browser cookie. If you want to sign in again with the same account, you may need to enable cookie in your browser.
 
 <center> <img src="assets/signin.png" width=300> </center>
 	
 <center> <img src="assets/welcome.png" width=300> </center>
 
-  2. At the top of web page, you can see our navigation bar, including *Game Machine*, *Wallet*, *Faucet*.
+  2. At the top of the web page, you can see our navigation bar, including **Game Machine**, **Wallet**, **Faucet**.
 
 <center> <img src="assets/nav.png" width=500> </center> 
 
-  3. Go to our faucet and get 0.01 ether for test.
+  3. Go to our faucet and get 0.01 ether for the test.
 
 <center> <img src="assets/faucet.png" width=500> </center>
 
-  4. Now you can start to play game machine! Input your wager amount and run the slotmachine. After 4 rounds, you will get one token for reward.
+  4. Now you can start to play the game machine! Input your wager amount and run the slotmachine. After four rounds, you will get one token as a reward.
 
 <center> <img src="assets/slotmachine.png" width=500> </center>
 
-  5. Consume 2 tokens, you can get into a *Double* state, where after 4 rounds, your reward will double.
+  5. Consume 2 tokens, you can get into a **Double** state, where after four rounds, your reward will double.
 
 <center> <img src="assets/double.png" width=500> </center>
 
-  6. (This part is only shown in the latter version) Look into the wallet, you can transfer your token between the private chain and the public chain. After input the amount of token to transfer, click the *exchange* button , you will send a transaction signed by your account to our server which transfer the transaction to chain . After waiting for seconds, you can see your token transferred to the other chain.
+  6. (This part is only shown in the latter version.) Switch to the wallet, you can transfer your token between the private chain and the public chain. After inputting the amount of token to transfer, click the `exchange` button, you will send a transaction signed by your account to our server which transfers the transaction to a chain. After a few seconds, you can see your token transferred to the other chain.
 
 
 <center> <img src="assets/wallet.png" width=400> </center>
 
 
 
-
 ### 3. Implementation in general.
 
 As the functions of the former version is included in the latter version, the latter version is explained here.
-
  
-The following image illustrates the overview architecture. In fact, the "bridge" is a part of the server. Please carefully watch the demo now for a better understanding.
+The following image illustrates the whole architecture. In fact, the **bridge** is a part of the server. Please watch the demo now for a better understanding.
 
 <center> <img src="assets/arc.png" width=700> </center>
 
 
-  1. Here I use this library [eth-lightwallet](https://github.com/ConsenSys/eth-lightwallet) to create your wallet. Your wallet is actually created and stored in your browser. Later you can use this wallet to create and sign a transaction.
+  1. Here I use this library [eth-lightwallet](https://github.com/ConsenSys/eth-lightwallet) to create your wallet. Your wallet is then stored in your browser. Later you can use this wallet to create and sign a transaction.
 
-  2. Get some ether for test.
+  2. Get some ethers for the test.
 
-  > When you require ether in the web page, a http request will be sent to the server. On the server side, a [parity](https://wiki.parity.io/)(a ethereum client like geth) node connected to kovan testnet is running. After the server receives your request, a transaction will be sent to the node. 
+  > When you request ether in the web page, a http request will be sent to the server. On the server side, a [parity](https://wiki.parity.io/) (an ethereum client like geth) node connected to kovan testnet is running. After the server receives your request, a transaction will be sent to the node. 
 
   3. Play the game machine and reward your token.
 
-  > Every time you play 5 rounds within the game machine, a http request is sent to the server. On the server side, a private chain composed of three nodes is running. After the server receives the request, call a function in the contract and send this transaction to the chain.
+  > Every time you play five rounds within the game machine, a http request is sent to the server. On the server side, a private chain composed of three nodes is running. After the server receives the request, call a function in the contract and send this transaction to the chain.
 
-  4. Consume 2 tokens, you can get into a *Double* state, where in 4 rounds, your reward will double.
+  4. Consume two tokens, you can get into a **Double** state, where in four rounds, your reward will double.
 
-  > This part is written fully in  `js`.
+  > This part is written in `JavaScript`.
 
   5. Exchange tokens between the private chain and the public chain via the wallet.
 
-  * When you click *exchange* button, you are actually using your wallet to create and sign a transaction.
-  * Then the transaction, wrapped in the http request, is sent to the server. Upon receving the transaction, the server sends it to the public chain or the private chain for you according to your decision. 
-  * Suppose the transaction is sent to the public chain and the public chain excecutes it, reduces you token amount in the public chain, and emits an event(you can see there are event defined in the contract). 
-  * Our bridge, as a js program that is listening on such event will catch this event, and send another transaction to the private chain to increase your token amount in the private chain. 
+  * When you click `exchange` button, you are using your wallet to create and sign a transaction.
+  * Then the transaction, wrapped in the http request, is sent to the server. Upon receiving the transaction, the server sends it to the public chain or the private chain based on your choice. 
+  * Suppose the transaction is sent to the public chain and the public chain executes it, reduces your token amount in the public chain, and emits an event (you can see there are several events defined in the contract). 
+  * Our bridge, as a JavaScript program that is listening on such event, will catch this event and send another transaction to the private chain to increase your token amount in the private chain. 
   * It's exactly the same process if you want to exchange your tokens to the other side.
  
  
