@@ -146,7 +146,7 @@ The former version is [here](http://public.secdevgame.site), which is built on t
 
 The latter version is [here](http://private.secdevgame.site), which is built on the private chain and the public chain.
 
-In addition, important notes are summarized about implementing such a demo in general.
+In addition, important notes of implementing such a demo in general are summarized.
 
 ### 2. Demo Show
 (这部分我等会优化下前端再补充图片)
@@ -154,54 +154,54 @@ In addition, important notes are summarized about implementing such a demo in ge
 
 1. Create your account and log in.
 
-2. Get some ether for test
+2. Get some ether for test.
 
-3. Now you can start to play game machine! Input your bet amount and run slotmachine. 5 rounds you will get one token for reward.
+3. Now you are ready to play the game machine! Input your bet amount and run the slotmachine. After 5 rounds, you will get one token for reward.
 
-4. Consume 2 tokens, you can get into a *Double* state, where in 4 rounds, your reward will be doubled.
+4. Consume 2 tokens, you can get into a *Double* state, where after 4 rounds, your reward will double.
 
-5. (This part is only showed in the latter version) Look into wallet, you can transfer your token between our private chain and our public chain. After input amount of token to transfer, click *exchange* button and input your password, you will send a transaction signed by your account to our server. Our server will send this signed transaction to public or private chain.
+5. (This part is only shown in the latter version) Look into the wallet, you can transfer your token between the private chain and the public chain. After input the amount of token to transfer, click the *exchange* button and input your password, you will send a transaction signed by your account to the server that has been already set up. The server will send this signed transaction to the public or the private chain.
 
 
 ### 3. Implementation in general.
 
-As the function of the former version is included in the latter version, I only introduce the latter version here.
+As the functions of the former version is included in the latter version, the latter version is explained here.
 
  
-Following picture is the overview architecture. In fact, bridge is a part of server.  I list it as a seperate part for its sepecial meaning. Now let us review our demo and see what actually happended in behind. Then the meaing of this picture will be clear. In the end, I will list programming tools to build this demo.
+The following image illustrates the overview architecture. In fact, the "bridge" is a part of the server. Please carefully watch the demo now for a better understanding.
 
 <center> <img src="assets/arc.png" width=700> </center>
 
 
 1. Create your account and login in.
 
-Here use [eth-lightwallet](https://github.com/ConsenSys/eth-lightwallet) to create your wallet. Your wallet is actually created and stored in your browser. Later you can use this wallet to create and sign a transaction.
+Please use [eth-lightwallet](https://github.com/ConsenSys/eth-lightwallet) to create your wallet. Your wallet is actually created and stored in your browser. Later you can use this wallet to create and sign a transaction.
 
 2. Get some ether for test.
 
-When you require ether in the web page, a http request will send to our server.  In our server side, a [parity](https://wiki.parity.io/)(a ethereum client like geth) node connected to kovan testnet is running. After our server receive your request, we will create a transfer transaction and send it to our node. 
+When you require ether in the web page, a http request will be sent to the server. On the server side, a [parity](https://wiki.parity.io/)(a ethereum client like geth) node connected to kovan testnet is running. After the server receives your request, a transaction will be sent to the node. 
 
-3. Play game machine and reward your token.
+3. Play the game machine and reward your token.
 
-The game machine is just a `js` stuff. Every time you play 5 rounds,  a http request is sent to our server. In our server side, a private chain composed of three node is running. After our server receive the request, we will call a function in our contract and send this transaction to the chain.
+Every time you play 5 rounds within the game machine, a http request is sent to the server. On the server side, a private chain composed of three nodes is running. After the server receives the request, call a function in the contract and send this transaction to the chain.
 
-4. Consume 2 tokens, you can get into a *Double* state, where in 4 rounds, your reward will be doubled.
+4. Consume 2 tokens, you can get into a *Double* state, where in 4 rounds, your reward will double.
 
-This step is completely implemented by `js`.
+This part is written fully in  `js`.
 
-5. Exchange tokens between private chain and public chain in wallet.
+5. Exchange tokens between the private chain and the public chain via the wallet.
 
-* When you click *exchange* button, you use your wallet to create a transaction and use your input password to sign the transaction. 
-* Then the transaction is contained in http request send to our server. Our server send this transaction to public chain or private chain for you according to your choice. 
-* Suppose the transaction is sent to public chain and the public chain excecutes it, reduces you token amount in the public chain, and emits an event(you can see there are event defined in our contract). 
-* Our bridge, a js program that is listening on such an event will catch this event, and send another transaction to the private chain to increase your token amount in the private chain. 
-* It's totally the same process if you want to exchange your tokens to the other side.
+* When you click *exchange* button, you are actually using your wallet to create a transaction and your input password to sign the transaction. 
+* Then the transaction, wrapped in the http request, is sent to the server. Upon receving the transaction, the server sends it to the public chain or the private chain for you according to your decision. 
+* Suppose the transaction is sent to the public chain and the public chain excecutes it, reduces you token amount in the public chain, and emits an event(you can see there are event defined in the contract). 
+* Our bridge, as a js program that is listening on such event will catch this event, and send another transaction to the private chain to increase your token amount in the private chain. 
+* It's exactly the same process if you want to exchange your tokens to the other side.
  
  
 ## Appendix
 
-* Public Chain: Kovan. We use [Parity](https://wiki.parity.io/) client to connect to Kovan.
-* Private Chain: [Geth](https://github.com/ethereum/go-ethereum), with POA as concensus algorithm
-* API to interact with two chain: [web3js](https://web3js.readthedocs.io/en/1.0/index.html)
-* Backend : [Koa](https://github.com/koajs/koa)
-* Frontend: [Vue](https://vuejs.org/)
+* Public Chain: Kovan. We use the [Parity](https://wiki.parity.io/) client to connect to Kovan.
+* Private Chain: [Geth](https://github.com/ethereum/go-ethereum), with POA as the concensus algorithm.
+* API to interact with two chains: [web3js](https://web3js.readthedocs.io/en/1.0/index.html).
+* Backend : [Koa](https://github.com/koajs/koa).
+* Frontend: [Vue](https://vuejs.org/).
