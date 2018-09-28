@@ -3,8 +3,8 @@ This document is coupled with our tutorial at [IEEE SecDev2018](https://secdev.i
 
 Two demo links (only available from 29 Sep 2018 to 3 Oct 2018):
 
-* Demo on public chain: [http://public.secdevgame.site](http://public.secdevgame.site)
-* Demo on public chain and consortium chain: [http://private.secdevgame.site](http://private.secdevgame.site)
+* Demo on public chain: [consortium.secdevgame.site](https://public.secdevgame.site)
+* Demo on public chain and consortium chain: [consortium.secdevgame.site](https://consortium.secdevgame.site)
 
 ## Overview 
 
@@ -142,9 +142,9 @@ Possible arguments: **10000, "DemoToken","DMT", 10**.
 
 In this part, the detailed explanation of the demo is provided. There are altogether two versions of the demo. One is built on the public chain only while the other is built on both the consortium chain and the public chain. The functions of the former version are included in the latter version. After going through the former version, you can have a better understanding of why we use the consortium chain here. 
 
-The former version is [here](http://public.secdevgame.site), which is built on the public chain only.
+The former version is [here](https://public.secdevgame.site), which is built on the public chain only.
 
-The latter version is [here](http://private.secdevgame.site), which is built on the consortium chain and the public chain.
+The latter version is [here](https://consortium.secdevgame.site), which is built on the consortium chain and the public chain.
 
 ### 2. Demo show
 
