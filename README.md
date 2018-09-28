@@ -7,13 +7,11 @@ Two demo links (only available from 29 Sep 2018 to 3 Oct 2018):
 * Demo on public chain: [public.secdevgame.site](https://public.secdevgame.site)
 * Demo on public chain and consortium chain: [consortium.secdevgame.site](https://consortium.secdevgame.site)
 
-## Folder: contract
+In the two folders:
 
-This folder contains all the code used in our tutorial and live demo.
+* The **contract** folder contains all the code used in our tutorial and live demo.
 
-## Folder: tutorial
-
-This folder contains the detailed instruction document. You can follow the steps to learn how to create and deploy contract, and further develop your own Blockchain application.
+* The **tutorial** folder contains the detailed instruction document. You can follow the steps to learn how to create and deploy contract, and further develop your own Blockchain application.
 
 ------
 Disclaimer: all the code, documents, and data in this repository are for the tutorial and related hands-on/demonstration only. They are by no means ready for any other use cases beyond the above academic/educational purposes.
