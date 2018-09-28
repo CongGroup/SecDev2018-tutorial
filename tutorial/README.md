@@ -1,7 +1,7 @@
 ## Statement
-This document is coupled with our tutorial at [IEEE SecDev2018](https://secdev.ieee.org/2018/agenda/), **Building Secure and Trustworthy Blockchain Applications**. 
+This document is coupled with our tutorial at [IEEE SecDev2018](https://secdev.ieee.org/2018/agenda/), **Building Secure and Trustworthy Blockchain Applications** [[pdf](https://secdev.ieee.org/wp-content/uploads/2018/09/SecDev-Tutorial-Building-Secure-Consortium.pdf)]. 
 
-Two demo links (Only available from 29 Sep 2018 to 3 Oct 2018):
+Two demo links (only available from 29 Sep 2018 to 3 Oct 2018):
 
 * Demo on public chain: [http://public.secdevgame.site](http://public.secdevgame.site)
 * Demo on public chain and consortium chain: [http://private.secdevgame.site](http://private.secdevgame.site)
