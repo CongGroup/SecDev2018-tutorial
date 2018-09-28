@@ -1,8 +1,16 @@
 # Tutorial
 
+## Statement
+This document is coupled with our tutorial at [IEEE SecDev2018](https://secdev.ieee.org/2018/agenda/), *Building Secure and Trustworthy Blockchain Applications*. 
+
+Two demo link (Only Opened between Sep 29 2018 and Oct 3 2018):
+
+* Public chain version: [http://public.secdevgame.site](http://public.secdevgame.site)
+* Public chain and Consortium chain version: [http://private.secdevgame.site](http://private.secdevgame.site)
+
 ## Overview 
 
-This tutorial includes three part: **Deploy and Make Contract Public**, **From Contract to a Web App**, and **Appendix**. Part one is about deploying a contract in public ethereum testnet. Part two elaborates on our demo on the basis of this contract and summarizes all the important notes. Part three introduces all the programming tools used.
+This tutorial includes three part: **Deploy and Make Contract Public**, **From Contract to a Web App**, and **Appendix**. Part one is about compiling and deploying the GameToken contract to Kovan testnet. Part two elaborates on our demo on the basis of this contract and summarizes all the important notes. Part three introduces all the programming tools used.
 
 ## Part One: Deploy and Make Contract Public
 
@@ -10,27 +18,30 @@ This tutorial includes three part: **Deploy and Make Contract Public**, **From C
 
 In this part, [*Kovan Etherscan*](https://kovan.etherscan.io/) (one of the ethereum testnets) is used for contract deployment. Before the actual deployment, it is required to install [chrome](https://www.google.com/chrome/) and [MetaMask](https://metamask.io/) extension. With *MetaMask* (a pretty GUI), you don't have to run your own node. See details below.
 
-### 2. Open MetaMask
+### 2. Lauch MetaMask
 
-After installing MetaMask, you can find MetaMask icon (a fox) on the top right. Click it. 
-> Please try to use the latest version of **MetaMask**.
+1. After installing MetaMask, you can find MetaMask icon (a fox) on the top right. Click it. 
+2. Click "TRY IT NOW" to use the new version.
 
 
 <center><img style="text-align:center" src="assets/maskopen.jpg" width="250" /></center>
 
 
-### 3. Create your account 
+### 3. Create a new MetaMask account 
 
-   1. Please follow the instruction to create a wallet account.
+   1. Create a password
 
 <center><img src="assets/newAccount.jpg" width="250" /></center>
 
-   2. After a few simple steps, you will see the "Secret Backup Phrase". Copy and save it to a 
-convenient place. Soon we will use it again.
+   2. After a few simple steps, you will see the "Secret Backup Phrase". Save it to a convenient place. We will use it in step 3
+   
+   <center><img src="assets/secret phrase.jpg" width="300"></center>
+    
+   3. Confirm the key phrase generated in step 2
 
-> "Secret Backup Phrase" can be used to recover your account. 
+	![confirm](assets/confirm.jpeg)
 
-<center><img src="assets/secret phrase.jpg" width="300"></center>
+
 
 ### 4. Connect to "Kovan Test Network"
 
@@ -61,17 +72,11 @@ For convenience, you can visit this [Demo Faucet](http://private.secdevgame.site
 
   1. For the first time, Remix will generate a simple "ballot.sol" contract for us. Replace the content with our customized token contract. And then paste our demo code to the editor. You can find the code [here](https://github.com/CongGroup/SecDev2018-tutorial/blob/master/contract/DemoToken.sol).
 
-
-  2. Click `Compile`. It displays all the information of the compiler. By default, the current version is `0.4.25+commit.59dbf8f1.Emscripten.clang` and you don't have to change it. In case it's different, you can choose it at the very beginning of drop-down item (show in the second picture below).
-
-  3. Select `Enable Optimation` and click `Start to compile`
-<center><img src="assets/compile.jpg" width="500" /> </center>
-
-  > Note: Check the following image if your have trouble following step 2 in this session.
-<center> <img src="assets/version.jpg", width="400"> </center>
- 
-
-
+  2. Swith to compile tab, It displays all the information of the compiler. Make sure Enable Optimization is checked.
+  	<center><img src="assets/compile.jpg" width="500" /> </center>
+  3. Select compiler version. `0.4.25+commit.59dbf8f1.Emscripten.clang` 
+  	<center> <img src="assets/version.jpg", width="400"> </center>
+  4. Click Start to compile.
 
 ### 8. Deploy Contract
 
@@ -111,7 +116,7 @@ Possible arguments: **10000, "DemoToken","DMT", 10**.
 
 > In Etherscan, you can check every transaction and see the source code of every deployed contract. To make your contract reliable for others, it's better to publish your contract.
 
-<center><img src="assets/getEther.png" width="800" /></center>
+<center><img src="assets/etherscan.jpg" width="800" /></center>
 
 
 
@@ -138,11 +143,11 @@ Possible arguments: **10000, "DemoToken","DMT", 10**.
 
 ### 1. Introduction
 
-In this part, the detailed explanation of the demo is provided. There are altogether two versions of the demo. One is built on the public chain only while the other is built on both the private chain and the public chain. The functions of the former version are included in the latter version. After going through the former version, you can have a better understanding of why we use the private chain here. 
+In this part, the detailed explanation of the demo is provided. There are altogether two versions of the demo. One is built on the public chain only while the other is built on both the consortium chain and the public chain. The functions of the former version are included in the latter version. After going through the former version, you can have a better understanding of why we use the consortium chain here. 
 
 The former version is [here](http://public.secdevgame.site), which is built on the public chain only.
 
-The latter version is [here](http://private.secdevgame.site), which is built on the private chain and the public chain.
+The latter version is [here](http://private.secdevgame.site), which is built on the consortium chain and the public chain.
 
 ### 2. Demo show
 
@@ -169,7 +174,7 @@ The latter version is [here](http://private.secdevgame.site), which is built on 
 
 <center> <img src="assets/double.png" width=500> </center>
 
-  6. (This part is only shown in the latter version.) Switch to the wallet, you can transfer your token between the private chain and the public chain. After inputting the amount of token to transfer, click the `exchange` button, you will send a transaction signed by your account to our server which transfers the transaction to a chain. After a few seconds, you can see your token transferred to the other chain.
+  6. (This part is only shown in the latter version.) Switch to the wallet, you can transfer your token between the consortium chain and the public chain. After inputting the amount of token to transfer, click the `exchange` button, you will send a transaction signed by your account to our server which transfers the transaction to a chain. After a few seconds, you can see your token transferred to the other chain.
 
 
 <center> <img src="assets/wallet.png" width=400> </center>
@@ -193,25 +198,25 @@ The following image illustrates the whole architecture. In fact, the **bridge** 
 
   3. Play the game machine and reward your token.
 
-  > Every time you play five rounds within the game machine, a http request is sent to the server. On the server side, a private chain composed of three nodes is running. After the server receives the request, call a function in the contract and send this transaction to the chain.
+  > Every time you play five rounds within the game machine, a http request is sent to the server. On the server side, a consortium chain composed of three nodes is running. After the server receives the request, call a function in the contract and send this transaction to the chain.
 
   4. Consume two tokens, you can get into a **Double** state, where in four rounds, your reward will double.
 
   > This part is written in `JavaScript`.
 
-  5. Exchange tokens between the private chain and the public chain via the wallet.
+  5. Exchange tokens between the consortium chain and the public chain via the wallet.
 
   * When you click `exchange` button, you are using your wallet to create and sign a transaction.
-  * Then the transaction, wrapped in the http request, is sent to the server. Upon receiving the transaction, the server sends it to the public chain or the private chain based on your choice. 
+  * Then the transaction, wrapped in the http request, is sent to the server. Upon receiving the transaction, the server sends it to the public chain or the consortium chain based on your choice. 
   * Suppose the transaction is sent to the public chain and the public chain executes it, reduces your token amount in the public chain, and emits an event (you can see there are several events defined in the contract). 
-  * Our bridge, as a JavaScript program that is listening on such event, will catch this event and send another transaction to the private chain to increase your token amount in the private chain. 
+  * Our bridge, as a JavaScript program that is listening on such event, will catch this event and send another transaction to the consortium chain to increase your token amount in the consortium chain. 
   * It's exactly the same process if you want to exchange your tokens to the other side.
  
  
 ## Part Three: Appendix
 
   * Public Chain: Kovan. We use the [Parity](https://wiki.parity.io/) client to connect to Kovan.
-  * Private Chain: [Geth](https://github.com/ethereum/go-ethereum), with POA as the concensus algorithm.
+  * Consortium Chain: [Geth](https://github.com/ethereum/go-ethereum), with POA as the concensus algorithm.
   * API to interact with two chains: [web3js](https://web3js.readthedocs.io/en/1.0/index.html).
   * Backend : [Koa](https://github.com/koajs/koa).
   * Frontend: [Vue](https://vuejs.org/).
