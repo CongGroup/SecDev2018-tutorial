@@ -163,15 +163,15 @@ The latter version is [here](https://consortium.secdevgame.site), which is built
 
 <center> <img src="assets/faucet.png" width=500> </center>
 
-  4. Now you can start to play the game machine! Input your wager amount and run the slotmachine. After four rounds, you will get one token as a reward.
+  4. Now you can start to play the game machine! Input your wager amount and run the slotmachine. Every two rounds, you will get one token as a reward.
 
 <center> <img src="assets/slotmachine.png" width=500> </center>
 
-  5. Consume 2 tokens, you can get into a **Double** state, where after four rounds, your reward will double.
+  5. Consume 2 tokens, you can get your **Guaranted Winning Round** , when every round you can get three identical symbols.
 
 <center> <img src="assets/double.png" width=500> </center>
 
-  6. (This part is only shown in the latter version.) Switch to the wallet, you can transfer your token between the consortium chain and the public chain. After inputting the amount of token to transfer, click the `exchange` button, you will send a transaction signed by your account to our server which transfers the transaction to a chain. After a few seconds, you can see your token transferred to the other chain.
+  6. (This part is only shown in the latter version.) Switch to the wallet, you can transfer your token between the consortium chain and the public chain. After inputting the amount of token to transfer, click a button, you will send a transaction signed by your account to our server which transfers the transaction to a chain. After a few seconds, you can see your token transferred to the other chain.
 
 
 <center> <img src="assets/wallet.png" width=400> </center>
@@ -197,13 +197,14 @@ The following image illustrates the whole architecture. In fact, the **bridge** 
 
   > Every time you play five rounds within the game machine, a http request is sent to the server. On the server side, a consortium chain composed of three nodes is running. After the server receives the request, call a function in the contract and send this transaction to the chain.
 
-  4. Consume two tokens, you can get into a **Double** state, where in four rounds, your reward will double.
+  4. Consume two tokens, you can get your **Guaranted Winning Round**, When every  2 rounds you can get three identical symbols.
+
 
   > This part is written in `JavaScript`.
 
-  5. Exchange tokens between the consortium chain and the public chain via the wallet.
+  5. Transfer tokens between the consortium chain and the public chain via the wallet.
 
-  * When you click `exchange` button, you are using your wallet to create and sign a transaction.
+  * When you click the transfer button, you are using your wallet to create and sign a transaction.
   * Then the transaction, wrapped in the http request, is sent to the server. Upon receiving the transaction, the server sends it to the public chain or the consortium chain based on your choice. 
   * Suppose the transaction is sent to the public chain and the public chain executes it, reduces your token amount in the public chain, and emits an event (you can see there are several events defined in the contract). 
   * Our bridge, as a JavaScript program that is listening on such event, will catch this event and send another transaction to the consortium chain to increase your token amount in the consortium chain. 
