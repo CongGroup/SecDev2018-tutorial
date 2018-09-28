@@ -1,10 +1,10 @@
 ## Statement
-This document is coupled with our tutorial at [IEEE SecDev2018](https://secdev.ieee.org/2018/agenda/), *Building Secure and Trustworthy Blockchain Applications*. 
+This document is coupled with our tutorial at [IEEE SecDev2018](https://secdev.ieee.org/2018/agenda/), **Building Secure and Trustworthy Blockchain Applications**. 
 
-Two demo link (Only Opened between Sep 29 2018 and Oct 3 2018):
+Two demo links (Only available from 29 Sep 2018 to 3 Oct 2018):
 
-* Public chain version: [http://public.secdevgame.site](http://public.secdevgame.site)
-* Public chain and Consortium chain version: [http://private.secdevgame.site](http://private.secdevgame.site)
+* Demo on public chain: [http://public.secdevgame.site](http://public.secdevgame.site)
+* Demo on public chain and consortium chain: [http://private.secdevgame.site](http://private.secdevgame.site)
 
 ## Overview 
 
@@ -219,4 +219,4 @@ The following image illustrates the whole architecture. In fact, the **bridge** 
   * Frontend: [Vue](https://vuejs.org/).
 
 ------
-Disclaimer: all the code, documents, and data in this repository are for the tutorial and related hands-on/demonstration only. They are by no means ready for any other usage cases beyond the above academic/educational purposes.
+Disclaimer: all the code, documents, and data in this repository are for the tutorial and related hands-on/demonstration only. They are by no means ready for any other use cases beyond the above academic/educational purposes.
