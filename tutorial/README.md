@@ -35,12 +35,11 @@ In this part, [*Kovan Etherscan*](https://kovan.etherscan.io/) (one of the ether
 
    2. After a few simple steps, you will see the "Secret Backup Phrase". Save it to a convenient place. We will use it in step 3
    
-   <center><img src="assets/secret phrase.jpg" width="300"></center>
+<center><img src="assets/secret phrase.jpg" width="300"></center>
     
    3. Confirm the key phrase generated in step 2
 
-	![confirm](assets/confirm.jpeg)
-
+<center><img src="assets/confirm.jpeg" width="300"></center>
 
 
 ### 4. Connect to "Kovan Test Network"
