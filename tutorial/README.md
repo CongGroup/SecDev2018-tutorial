@@ -219,3 +219,6 @@ The following image illustrates the whole architecture. In fact, the **bridge** 
   * API to interact with two chains: [web3js](https://web3js.readthedocs.io/en/1.0/index.html).
   * Backend : [Koa](https://github.com/koajs/koa).
   * Frontend: [Vue](https://vuejs.org/).
+
+------
+Disclaimer: all the code, documents, and data in this repository are for the tutorial and related hands-on/demonstration only. They are by no means ready for any other usage cases beyond the above academic/educational purposes.
