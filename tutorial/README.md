@@ -3,7 +3,7 @@ This document is coupled with our tutorial at [IEEE SecDev2018](https://secdev.i
 
 Two demo links (only available from 29 Sep 2018 to 3 Oct 2018):
 
-* Demo on public chain: [consortium.secdevgame.site](https://public.secdevgame.site)
+* Demo on public chain: [public.secdevgame.site](https://public.secdevgame.site)
 * Demo on public chain and consortium chain: [consortium.secdevgame.site](https://consortium.secdevgame.site)
 
 ## Overview 
