@@ -1,5 +1,3 @@
-# Tutorial
-
 ## Statement
 This document is coupled with our tutorial at [IEEE SecDev2018](https://secdev.ieee.org/2018/agenda/), *Building Secure and Trustworthy Blockchain Applications*. 
 
