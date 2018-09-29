@@ -86,7 +86,7 @@ After compilation, it's time to deploy the contract. The contract constructor ha
 * Token Decimal (uint). As there is no **float** type now, you may need to define decimal.
 
 
-Possible arguments: **10000, "DemoToken","DMT", 10**.
+Possible arguments: **10000, "GameToken","GTN", 3**.
 
   1. Input the example arguments and click `Deploy`.
 
