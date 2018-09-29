@@ -71,8 +71,9 @@ For convenience, you can visit this [Demo Faucet](http://faucet.secdevgame.site)
 
   2. Swith to compile tab, It displays all the information of the compiler. Make sure Enable Optimization is checked.
   	<center><img src="assets/compile.jpg" width="500" /> </center>
-  3. Select compiler version. `0.4.25+commit.59dbf8f1.Emscripten.clang` 
-  	<center> <img src="assets/version.jpg", width="400"> </center>
+  3. Select compiler version `0.4.25+commit.59dbf8f1` (i.e., `0.4.25+commit.59dbf8f1.Emscripten.clang`)
+  	<center><img src="assets/version.jpg" width="500" /> </center>
+	
   4. Click Start to compile.
 
 ### 8. Deploy Contract
