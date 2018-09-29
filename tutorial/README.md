@@ -124,7 +124,7 @@ Possible arguments: **10000, "GameToken","GTN", 3**.
 <center><img src="assets/eccode.jpg" width="800" /></center>
 
 
-  3. Input your contract name, choose the compiler version and the source code. Then you can verify and publish your source code.
+  3. Input your contract name, choose the compiler version, and paste the source code. Then you can verify and publish your source code.
 
 
 <center><img src="assets/publish.jpg" width="800" /></center>
