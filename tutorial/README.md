@@ -1,5 +1,5 @@
 ## Preface
-This document is coupled with our tutorial at [IEEE SecDev2018](https://secdev.ieee.org/2018/agenda/), **Building Secure and Trustworthy Blockchain Applications** [[pdf](https://secdev.ieee.org/wp-content/uploads/2018/09/SecDev-Tutorial-Building-Secure-Consortium.pdf)] [[slides](https://www.dropbox.com/s/uzc43xhjul160i0/secdev2018-slides.pdf?dl=0)]. 
+This document is coupled with our tutorial at [IEEE SecDev2018](https://secdev.ieee.org/2018/agenda/), **Building Secure and Trustworthy Blockchain Applications** [[pdf](https://secdev.ieee.org/wp-content/uploads/2018/09/SecDev-Tutorial-Building-Secure-Consortium.pdf)] [[slides](https://www.dropbox.com/s/jcwn41ooapegykd/secdev2018-slides-v2.1.pdf?dl=0)]. 
 
 Two demo links (only available from 29 Sep 2018 to 3 Oct 2018):
 
