@@ -67,7 +67,7 @@ For convenience, you can visit this [Demo Faucet](http://faucet.secdevgame.site)
 
 ### 7. Compile contract 
 
-  1. For the first time, Remix will generate a simple "ballot.sol" contract for us. Replace the content with our customized token contract. And then paste our demo code to the editor. You can find the code [here](https://github.com/CongGroup/SecDev2018-tutorial/blob/master/contract/DemoToken.sol), and name it to `DemoToken.sol` if needed.
+  1. For the first time, Remix will generate a simple "ballot.sol" contract for us. Replace the content with our customized token contract. And then paste our demo code to the editor (i.e., replacing the code in the default `ballot.sol`). You can find the code [here](https://github.com/CongGroup/SecDev2018-tutorial/blob/master/contract/DemoToken.sol).
 
   2. Swith to compile tab, It displays all the information of the compiler. Make sure Enable Optimization is checked.
   	<center><img src="assets/compile.jpg" width="500" /> </center>
