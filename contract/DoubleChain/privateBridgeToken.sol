@@ -49,7 +49,7 @@ contract BridgeToken is GameToken {
     function pay(address user, uint amount, bytes32 transactionHash) public onlyAuthorizedMachine() {
         bytes32 hash = keccak256(abi.encodePacked(user, amount, transactionHash));
 
-        require(!Helpers.addressArrayContains(deposits[hash], msg.sender))
+        require(!Helpers.addressArrayContains(deposits[hash], msg.sender));
 
         deposits[hash].push(msg.sender);
 
