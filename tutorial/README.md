@@ -49,7 +49,7 @@ By default, "Main Ethereum Network" is used for contract deployment. In this tut
 
 ### 5. Get test ether 
 
-For convenience, you can visit this [Demo Faucet](http://private.secdevgame.site/#/faucet) to get 0.01 ether for the test. Or you can visit [Kovan faucet](https://gitter.im/kovan-testnet/faucet), send out your address, and wait for an administrator to give you 3 ethers.
+For convenience, you can visit this [Demo Faucet](http://faucet.secdevgame.site) to get 0.01 ether for the test. Or you can visit [Kovan faucet](https://gitter.im/kovan-testnet/faucet), send out your address, and wait for an administrator to give you 3 ethers.
 
 <center><img src="assets/getEther.png" width="700" /></center>
 
