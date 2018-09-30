@@ -1,6 +1,7 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.25;
 
-import '../SingleChain/GameToken.sol';
+import '../Demo I/GameToken.sol';
+import '../utils/Helpers.sol';
 
 contract BridgeToken is GameToken{
 
@@ -19,6 +20,34 @@ contract BridgeToken is GameToken{
         requiredSignatures = _requiredSignatures;
         _owner = msg.sender;
 
+    }
+
+    // returns whether signatures (whose components are in `vs`, `rs`, `ss`)
+    // contain distinct correct signatures with a number of `requiredSignatures`
+    // where signer is in `_authorizdedMachines`
+    // that signed `message`
+    function hasEnoughValidSignatures(bytes message, uint8[] vs, bytes32[] rs, bytes32[] ss) internal view returns (bool) {
+        // not enough signatures
+        if (vs.length < requiredSignatures) {
+            return false;
+        }
+   
+        bytes32 hash = MessageSigning.hashMessage(message);
+        address [] memory encountered_addresses = new address[](vs.length);
+
+        for (uint256 i = 0; i < requiredSignatures; i++) {
+            address recovered_address = ecrecover(hash, vs[i], rs[i], ss[i]);
+            // only signatures by addresses in `addresses` are allowed
+            if (!_authorizdedMachines[recovered_address]) {
+                return false;
+            }
+            // duplicate signatures are not allowed
+            if (Helpers.addressArrayContains(encountered_addresses, recovered_address)) {
+                return false;
+            }
+            encountered_addresses[i] = recovered_address;
+        }
+        return true;
     }
 
     function setRequiredSignatures(uint newRequiredSignatures) public onlyOwner(){
@@ -41,7 +70,7 @@ contract BridgeToken is GameToken{
         require(message.length == 84);   
 
         // check that at least `requiredSignatures` `authorities` have signed `message`
-        require(Helpers.hasEnoughValidSignatures(message, vs, rs, ss, _authorizdedMachines, requiredSignatures));
+        require(hasEnoughValidSignatures(message, vs, rs, ss));
 
         address recipient = Message.getRecipients(message);
         uint256 value = Message.getValues(message);

@@ -1,6 +1,7 @@
 pragma solidity ^0.4.21;
 
-import '../SingleChain/GameToken.sol';
+import '../Demo I/GameToken.sol';
+import '../utils/Helpers.sol';
 
 
 contract BridgeToken is GameToken {
