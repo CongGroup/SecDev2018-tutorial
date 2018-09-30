@@ -196,9 +196,9 @@ The following image illustrates the whole architecture. In fact, the **bridge** 
 
   3. Play the game machine and reward your token.
 
-  > Every time you play five rounds within the game machine, a http request is sent to the server. On the server side, a consortium chain composed of three nodes is running. After the server receives the request, call a function in the contract and send this transaction to the chain.
+  > Every time you play two rounds within the game machine, a http request is sent to the server. On the server side, a consortium chain composed of three nodes is running. After the server receives the request, call a function in the contract and send this transaction to the chain.
 
-  4. Consume two tokens, you can get your **Guaranted Winning Round**, When every  2 rounds you can get three identical symbols.
+  4. Consume two tokens, you can get your **Guaranted Winning Round**, When you can get three identical symbols.
 
 
   > This part is written in `JavaScript`.
