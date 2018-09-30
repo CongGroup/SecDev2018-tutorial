@@ -1,25 +1,5 @@
 pragma solidity ^0.4.25;
 
-library Helpers {
-    function addressArrayContains(address[] array, address value) internal pure returns (bool) {
-        for (uint256 i = 0; i < array.length; i++) {
-            if (array[i] == value) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    function indexOfElement(address[] array, address value) internal pure returns (int) {
-        for (uint i = 0; i< array.length; ++i) {
-            if(array[i] == value ) {
-                return int(i);
-            }
-        }
-        return -1;
-    }
-}
-
 library SafeMath {
   function mul(uint256 a, uint256 b) internal pure returns (uint256) {
     // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
@@ -72,15 +52,12 @@ contract GameToken {
     uint256 private _totalSupply;
     mapping (address => uint256) private _balances;
     mapping (address => mapping (address => uint256)) private _allowed;
+    mapping (address => bool) public _authorizdedMachines;
     
     string public name;
     uint8 public decimals;
     string public symbol;
 
-    // only authorized game machine can consume and reward user token
-    address [] internal _authorizdedMachines;
-
-    
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
     event Reward(address indexed machine, address indexed player, uint256 value);
@@ -151,28 +128,16 @@ contract GameToken {
     }
 
     modifier onlyAuthorizedMachine()  {
-        require(Helpers.addressArrayContains(_authorizdedMachines, msg.sender));
+        require(_authorizdedMachines[msg.sender]);
         _;
     }
     
     function addGameMachine(address machine) public onlyOwner() {
-        _authorizdedMachines.push(machine);
+        _authorizdedMachines[machine] = true;
     }
     
     function removeGameMachine(address machine) public onlyOwner() {
-        // find index of target machine in authorized machine array 
-        // if not find index will be -1 
-        int index = Helpers.indexOfElement(_authorizdedMachines, machine);
-
-        if (index!=-1){
-            uint len = _authorizdedMachines.length;
-
-            // mv last element to the location of target machine
-            _authorizdedMachines[uint(index)] = _authorizdedMachines[len - 1];
-
-            // delete last element
-            delete _authorizdedMachines[len - 1];
-        }
+        _authorizdedMachines[machine] = false;
     }
     
     function reward(address to, uint256 value) public onlyAuthorizedMachine() returns (bool) {
